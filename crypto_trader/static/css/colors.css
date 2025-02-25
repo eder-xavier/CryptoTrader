@@ -1,0 +1,10 @@
+:root {
+    --dark-blue: #101e45;    /* Azul escuro principal */
+    --indigo: #3d7499;       /* Índigo vibrante */
+    --light-indigo: #3d58a2; /* Índigo claro para destaques */
+    --gray-dark: #1f2937;    /* Cinza escuro para fundo */
+    --gray-light: #d1d5db;   /* Cinza claro para textos sutis */
+    --white: #ffffff;        /* Branco puro */
+    --success-green: #10b981; /* Verde para tendências positivas */
+    --shadow: rgba(0, 0, 0, 0.2); /* Sombra suave */
+}

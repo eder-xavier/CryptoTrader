@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+    <h1>Seu Portfólio de Criptomoedas</h1>
+    <p>Aqui está o portfólio sugerido pela IA com base nas suas pesquisas:</p>
+
+    {% if portfolio %}
+        <ul>
+        {% for cripto in portfolio %}
+            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - Preço Atual: ${{ cripto.preco_atual }} | Previsão: ${{ cripto.previsao }} | Tendência: <span class="tendencia-alta">{{ cripto.tendencia }}</span> | Lucro Potencial: ${{ cripto.lucro_potencial }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum portfólio gerado ainda. Faça algumas buscas para a IA começar a aprender!</p>
+    {% endif %}
+
+    <p><a href="{% url 'MainCT:index' %}">Voltar à busca</a> | <a href="{% url 'MainCT:recomendacoes' %}">Ver recomendações</a></p>
+{% endblock %}

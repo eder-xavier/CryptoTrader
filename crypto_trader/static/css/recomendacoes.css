@@ -1,0 +1,52 @@
+@import url('colors.css');
+
+body {
+    background-color: var(--gray-dark);
+    color: var(--white);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: var(--indigo);
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+}
+
+p {
+    text-align: center;
+    color: var(--gray-light);
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+li {
+    background-color: var(--dark-blue);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
+
+a {
+    color: var(--light-indigo);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

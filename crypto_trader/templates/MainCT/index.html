@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <h1>Bem-vindo ao Crypto Trader</h1>
+    <p>Seu guia de criptomoedas inteligentes!</p>
+
+    <form method="get" action="{% url 'MainCT:buscar_criptos' %}">
+        <input type="text" name="q" placeholder="Buscar criptomoedas (ex.: Bitcoin, BTC)..." value="{{ request.GET.q }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if criptos %}
+        <h2>Resultados da busca:</h2>
+        <ul>
+        {% for cripto in criptos %}
+            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - ${{ cripto.preco }} | Market Cap: ${{ cripto.market_cap }} | Vol 24h: ${{ cripto.volume_24h }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <p><a href="{% url 'MainCT:recomendacoes' %}">Ver recomendações</a> | <a href="{% url 'MainCT:portfolio' %}">Ver meu portfólio</a></p>
+{% endblock %}

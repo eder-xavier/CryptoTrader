@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/recomendacoes.css' %}">
+    <h1>Recomendações de Criptomoedas</h1>
+    <p>Aqui estão algumas sugestões baseadas nas suas pesquisas anteriores:</p>
+
+    {% if recomendados %}
+        <ul>
+        {% for cripto in recomendados %}
+            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - ${{ cripto.preco }} | Market Cap: ${{ cripto.market_cap }} | Vol 24h: ${{ cripto.volume_24h }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma recomendação disponível. Faça algumas buscas para começarmos a aprender seus interesses!</p>
+    {% endif %}
+
+    <p><a href="{% url 'MainCT:index' %}">Voltar à busca</a></p>
+{% endblock %}
