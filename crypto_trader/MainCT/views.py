@@ -84,7 +84,6 @@ def gerar_portfolio(historico):
     criptos_analisadas = {}
     for busca in historico:
         for cripto in busca.resultados:
-            # Verificando se 'id' existe no dicionário
             if 'id' not in cripto:
                 continue  # Pula se não houver 'id'
             cripto_id = cripto['id']
@@ -100,7 +99,7 @@ def gerar_portfolio(historico):
                         "tendencia": "Alta" if previsao > cripto["preco"] else "Baixa",
                         "lucro_potencial": previsao - cripto["preco"]
                     }
-                time.sleep(2)  # Atraso para evitar erro 429
+                time.sleep(2)  
     
     portfolio = sorted(criptos_analisadas.values(), key=lambda x: x["lucro_potencial"], reverse=True)[:5]
     return portfolio

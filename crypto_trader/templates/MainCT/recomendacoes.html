@@ -1,19 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/recomendacoes.css' %}">
-    <h1>Recomendações de Criptomoedas</h1>
-    <p>Aqui estão algumas sugestões baseadas nas suas pesquisas anteriores:</p>
+<link rel="stylesheet" href="{% static 'css/recomendacoes.css' %}">
+    
+    <section class="container">
+        <h1>Crypto Recommendations</h1>
+        <p>Here are some suggestions based on your past research::</p>
 
-    {% if recomendados %}
-        <ul>
-        {% for cripto in recomendados %}
-            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - ${{ cripto.preco }} | Market Cap: ${{ cripto.market_cap }} | Vol 24h: ${{ cripto.volume_24h }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Nenhuma recomendação disponível. Faça algumas buscas para começarmos a aprender seus interesses!</p>
-    {% endif %}
+        {% if recomendados %}
+            <ul class="crypto-list">
+            {% for cripto in recomendados %}
+                <li class="crypto-item">
+                    <span class="crypto-name">{{ cripto.nome }} ({{ cripto.simbolo }})</span>
+                    <span class="crypto-price">${{ cripto.preco }}</span>
+                    <span class="crypto-market">Market Cap: ${{ cripto.market_cap }}</span>
+                    <span class="crypto-volume">Vol 24h: ${{ cripto.volume_24h }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-data">No recommendations available. Do some searches so we can start learning your interests!</p>
+        {% endif %}
 
-    <p><a href="{% url 'MainCT:index' %}">Voltar à busca</a></p>
+        <p class="back-link"><a href="{% url 'MainCT:index' %}">Back to Research</a></p>
+    </section>
 {% endblock %}

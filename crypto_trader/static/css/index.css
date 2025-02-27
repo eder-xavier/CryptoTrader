@@ -3,93 +3,154 @@
 body {
     background-color: var(--gray-dark);
     color: var(--white);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 h1 {
     color: var(--indigo);
-    text-align: center;
-    margin: 20px 0;
     font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--success-green);
 }
 
 p {
-    text-align: center;
-    color: var(--gray-light);
     font-size: 1.2rem;
+    color: var(--gray-light);
+    margin-bottom: 20px;
 }
 
-form {
+.search-form {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
     border: none;
     border-radius: 5px 0 0 5px;
     background-color: var(--white);
     color: var(--gray-dark);
-    width: 300px;
-    transition: box-shadow 0.3s ease;
+    width: 320px;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 input[type="text"]:focus {
     outline: none;
-    box-shadow: 0 0 5px var(--light-indigo);
+    box-shadow: 0 0 8px var(--light-indigo);
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 1rem;
     border: none;
     border-radius: 0 5px 5px 0;
     background-color: var(--indigo);
     color: var(--white);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: var(--light-indigo);
+    background-color: var(--button-hover);
 }
 
-h2 {
-    color: var(--light-indigo);
-    text-align: center;
-    margin: 20px 0;
-}
-
-ul {
+.crypto-list {
     list-style: none;
     padding: 0;
     max-width: 600px;
     margin: 0 auto;
 }
 
-li {
+.crypto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--dark-blue);
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px var(--shadow);
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
-li:hover {
-    transform: translateY(-2px);
+.crypto-item:hover {
+    transform: translateY(-3px);
 }
 
-a {
-    color: var(--light-indigo);
+.crypto-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.crypto-price {
+    font-size: 1.1rem;
+    color: var(--success-green);
+}
+
+.crypto-info {
+    font-size: 0.9rem;
+    color: var(--gray-light);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: var(--indigo);
+    color: var(--white);
     text-decoration: none;
-    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-a:hover {
-    text-decoration: underline;
+.btn:hover {
+    background-color: var(--button-hover);
+}
+
+.btn-alt {
+    background-color: var(--success-green);
+}
+
+.btn-alt:hover {
+    background-color: #059669;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

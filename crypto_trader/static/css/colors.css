@@ -1,10 +1,11 @@
 :root {
-    --dark-blue: #101e45;    /* Azul escuro principal */
-    --indigo: #3d7499;       /* Índigo vibrante */
-    --light-indigo: #3d58a2; /* Índigo claro para destaques */
-    --gray-dark: #1f2937;    /* Cinza escuro para fundo */
-    --gray-light: #d1d5db;   /* Cinza claro para textos sutis */
-    --white: #ffffff;        /* Branco puro */
-    --success-green: #10b981; /* Verde para tendências positivas */
-    --shadow: rgba(0, 0, 0, 0.2); /* Sombra suave */
+    --dark-blue: #0a192f;
+    --indigo: #3d5af1;
+    --light-indigo: #4c7bf5;
+    --gray-dark: #1e293b;
+    --gray-light: #e2e8f0;
+    --white: #ffffff;
+    --success-green: #10b981;
+    --shadow: rgba(0, 0, 0, 0.2);
+    --button-hover: #2a4df3;
 }

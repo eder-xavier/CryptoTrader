@@ -2,18 +2,18 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
-    <h1>Seu Portfólio de Criptomoedas</h1>
-    <p>Aqui está o portfólio sugerido pela IA com base nas suas pesquisas:</p>
+    <h1>Your Cryptocurrency Portfolio</h1>
+    <p>Here is the AI-suggested portfolio based on its research:</p>
 
     {% if portfolio %}
         <ul>
         {% for cripto in portfolio %}
-            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - Preço Atual: ${{ cripto.preco_atual }} | Previsão: ${{ cripto.previsao }} | Tendência: <span class="tendencia-alta">{{ cripto.tendencia }}</span> | Lucro Potencial: ${{ cripto.lucro_potencial }}</li>
+            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - Current Price: ${{ cripto.preco_atual }} | Prediction: ${{ cripto.previsao }} | Trend: <span class="tendencia-alta">{{ cripto.tendencia }}</span> | Potential Profit: ${{ cripto.lucro_potencial }}</li>
         {% endfor %}
         </ul>
     {% else %}
-        <p>Nenhum portfólio gerado ainda. Faça algumas buscas para a IA começar a aprender!</p>
+        <p>No portfolio generated yet. Do some searches for the AI ​​to start learning!</p>
     {% endif %}
 
-    <p><a href="{% url 'MainCT:index' %}">Voltar à busca</a> | <a href="{% url 'MainCT:recomendacoes' %}">Ver recomendações</a></p>
+    <p><a href="{% url 'MainCT:index' %}">Back to Research</a> | <a href="{% url 'MainCT:recomendacoes' %}">See Recommendations</a></p>
 {% endblock %}

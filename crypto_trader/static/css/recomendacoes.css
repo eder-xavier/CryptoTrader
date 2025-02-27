@@ -1,52 +1,75 @@
 @import url('colors.css');
 
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #2563eb;
+    --background-color: #111827;
+    --text-color: #e5e7eb;
+    --card-bg: #1f2937;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
 body {
-    background-color: var(--gray-dark);
-    color: var(--white);
-    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-h1 {
-    color: var(--indigo);
+.container {
+    max-width: 800px;
+    margin: 40px auto;
     text-align: center;
-    margin: 20px 0;
+}
+
+h1 {
+    color: var(--primary-color);
     font-size: 2.5rem;
 }
 
 p {
-    text-align: center;
-    color: var(--gray-light);
     font-size: 1.2rem;
+    color: var(--text-color);
 }
 
-ul {
+.crypto-list {
     list-style: none;
     padding: 0;
-    max-width: 600px;
-    margin: 20px auto;
+    margin: 20px 0;
 }
 
-li {
-    background-color: var(--dark-blue);
+.crypto-item {
+    background: var(--card-bg);
     padding: 15px;
     margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px var(--shadow);
-    transition: transform 0.2s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform 0.3s ease;
 }
 
-li:hover {
-    transform: translateY(-2px);
+.crypto-item:hover {
+    transform: translateY(-5px);
 }
 
-a {
-    color: var(--light-indigo);
+.crypto-name {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.crypto-price, .crypto-market, .crypto-volume {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.back-link a {
+    color: var(--secondary-color);
     text-decoration: none;
-    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+.back-link a:hover {
+    color: var(--primary-color);
 }

@@ -2,22 +2,34 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <h1>Bem-vindo ao Crypto Trader</h1>
-    <p>Seu guia de criptomoedas inteligentes!</p>
-
-    <form method="get" action="{% url 'MainCT:buscar_criptos' %}">
-        <input type="text" name="q" placeholder="Buscar criptomoedas (ex.: Bitcoin, BTC)..." value="{{ request.GET.q }}">
-        <button type="submit">Buscar</button>
-    </form>
-
-    {% if criptos %}
-        <h2>Resultados da busca:</h2>
-        <ul>
-        {% for cripto in criptos %}
-            <li>{{ cripto.nome }} ({{ cripto.simbolo }}) - ${{ cripto.preco }} | Market Cap: ${{ cripto.market_cap }} | Vol 24h: ${{ cripto.volume_24h }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-
-    <p><a href="{% url 'MainCT:recomendacoes' %}">Ver recomendações</a> | <a href="{% url 'MainCT:portfolio' %}">Ver meu portfólio</a></p>
+    
+    <div class="container">
+        <h1>Welcome to <span class="highlight">Crypto Trader</span></h1>
+        <p>Your Crypto Guide</p>
+    
+        <form method="get" action="{% url 'MainCT:buscar_criptos' %}" class="search-form">
+            <input type="text" name="q" placeholder="Search Crypto Assets (ex.: Bitcoin, BTC, ETH)..." value="{{ request.GET.q }}">
+            <button type="submit">Search</button>
+        </form>
+    
+        {% if criptos %}
+            <h2>Results:</h2>
+            <ul class="crypto-list">
+            {% for cripto in criptos %}
+                <li>
+                    <div class="crypto-item">
+                        <span class="crypto-name">{{ cripto.nome }} ({{ cripto.simbolo }})</span>
+                        <span class="crypto-price">${{ cripto.preco }}</span>
+                        <span class="crypto-info">Market Cap: ${{ cripto.market_cap }} | Vol 24h: ${{ cripto.volume_24h }}</span>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    
+        <div class="links">
+            <a href="{% url 'MainCT:recomendacoes' %}" class="btn">See Recommendations</a>
+            <a href="{% url 'MainCT:portfolio' %}" class="btn btn-alt">See my Portfolio</a>
+        </div>
+    </div>
 {% endblock %}
