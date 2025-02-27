@@ -1,16 +1,17 @@
 # CryptoTrader
-Um software de análise de criptoativos utilizando machine learning e IA.
-Sendo uma aplicação com uso de Django, APIrest, tensorflow e SK learn.
+Cryptoasset analysis software using machine learning and AI.
+Being an application using Django, APIrest, tensorflow and SK learn.
 
 
-1- Clone o repositorio e vá para o mesmo diretório do arquivo manage.py
+1- Clone the repository and go to the same directory as the manage.py file
 
-2- Execute pip install -r requirements.txt
+2- Run pip install -r requirements.txt
 
-3- Execute python manage.py makemigrations e python manage.py migrate
+3- Run python manage.py makemigrations and python manage.py migrate
 
-4- Execute python manage.py runserver
+4- Run python manage.py runserver
 
-![Screenshot 2025-02-25 161810](https://github.com/user-attachments/assets/3f04ba86-2055-409b-8b1e-9aaf878218a3)
-![Screenshot 2025-02-25 161830](https://github.com/user-attachments/assets/37e6202c-9931-4015-8ce2-3ceedbd51964)
-![Screenshot 2025-02-25 161852](https://github.com/user-attachments/assets/99e751bd-e7c8-4f72-aaf3-0476d0d24ebb)
+![Screenshot 2025-02-26 231501](https://github.com/user-attachments/assets/7da4e9e9-1aeb-47f9-8d0d-748bd8ece2c6)
+![Screenshot 2025-02-26 231535](https://github.com/user-attachments/assets/aa77ce4c-02fd-4baf-8b8f-c1d8137bbb60)
+![Screenshot 2025-02-26 231555](https://github.com/user-attachments/assets/a77068e9-f33c-4418-bee9-215a577ec249)
+
